@@ -131,15 +131,14 @@ if not input_invalid:
     print("    |    Your belt: ", belt)
 
     ## Lab 5 - Question 4: Use Loot
-    belt.health_points = functions_lab05.use_loot(belt,health_points)
-    
+    belt, health_points = functions_lab05.use_loot(belt, health_points)
 
     print("    ------------------------------------------------------------------")
     print("    |", end="    ")
     input("Analyze the roll (Press enter)")
     # Compare Player vs Monster's strength
     print("    |    --- You are matched in strength: " + str(combat_strength == m_combat_strength))
-    
+
     # Check the Player's overall strength and health
     print("    |    --- You have a strong player: " + str((combat_strength + health_points) >= 15))
 
@@ -172,13 +171,15 @@ if not input_invalid:
     # Lab 5: Call Recursive function
     print("    |", end="    ")
     num_dream_lvls = input("How many dream levels do you want to go down?")
-    if :
-        
-        
-        
+    num_dream_lvls = int(num_dream_lvls)
+    if num_dream_lvls > 0:
+        health_points -= 1
+        crazy_level = functions_lab05.inception_dream(num_dream_lvls)  
+        combat_strength += crazy_level
         print("combat strength: " + str(combat_strength))
         print("health points: " + str(health_points))
-
+    else:
+        print("Invalid input.")
     # Fight Sequence
     # Loop while the monster and the player are alive. Call fight sequence functions
     print("    ------------------------------------------------------------------")
