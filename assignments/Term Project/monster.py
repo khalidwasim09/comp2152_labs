@@ -1,15 +1,19 @@
-import random
 from character import Character
+import random
 
 class Monster(Character):
     def __init__(self):
-        combat_strength = random.randint(1, 100)
-        health_points = random.randint(1, 100)
-        super().__init__(combat_strength, health_points)
+        # Initialize the Monster using the parent class's constructor
+        super().__init__()
+        self._name = "Monster"  # Set the name of the Monster
 
     def monster_attacks(self):
-        return random.randint(1, self.combat_strength)
+        # Monster performs an attack, returning a random value for attack strength
+        attack_value = random.randint(5, 15)
+        print(f"{self._name} attacks with strength {attack_value}")
+        return attack_value
 
     def __del__(self):
-        print("The Monster object is being destroyed by the garbage collector.")
-        super().__del__() 
+        # Call the parent destructor
+        super().__del__()
+        print("The Monster object is being destroyed by the garbage collector")
